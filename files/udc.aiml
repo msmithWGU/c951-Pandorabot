@@ -1,7 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml>
+<aiml version="1.0">
+
+  <!-- GREETING -->
+  <category>
+    <pattern>HELLO</pattern>
+    <template>
+      Hi there! I'm your Computer Science Career Bot. What’s your name?
+    </template>
+  </category>
+
+  <!-- NAME -->
+  <category>
+    <pattern>MY NAME IS *</pattern>
+    <template>
+      Nice to meet you, <star/>! What area of computer science are you most interested in? 
+      (coding, security, data, troubleshooting systems, or automation)
+    </template>
+  </category>
+
+  <!-- CAREER RECOMMENDATIONS -->
+
+  <category>
+    <pattern>CODING</pattern>
+    <template>
+      You might be a great fit for a <b>Software Developer</b> role! Software Developers build programs, apps, or systems using languages like Python, Java, or JavaScript. 
+      Would you like to learn more about this role?
+      <think><set name="job">SOFTWARE DEVELOPER</set></think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>SECURITY</pattern>
+    <template>
+      You might thrive as a <b>Cybersecurity Analyst</b>! They protect computer systems from threats and analyze security risks. 
+      Would you like to learn more about this role?
+      <think><set name="job">CYBERSECURITY ANALYST</set></think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>DATA</pattern>
+    <template>
+      You should consider becoming a <b>Data Scientist</b>! They explore data, build models, and find insights using tools like Python, SQL, and R. 
+      Would you like to learn more about this role?
+      <think><set name="job">DATA SCIENTIST</set></think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>TROUBLESHOOTING SYSTEMS</pattern>
+    <template>
+      You might enjoy being a <b>Systems Analyst</b>! They help improve computer systems and act as a bridge between users and developers. 
+      Would you like to learn more about this role?
+      <think><set name="job">SYSTEMS ANALYST</set></think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>AUTOMATION</pattern>
+    <template>
+      A <b>DevOps Engineer</b> role could be perfect for you! They automate software deployments and ensure everything runs smoothly across environments. 
+      Would you like to learn more about this role?
+      <think><set name="job">DEVOPS ENGINEER</set></think>
+    </template>
+  </category>
+
+  <!-- FOLLOW-UP INFO BY JOB -->
+
+  <category>
+    <pattern>YES</pattern>
+    <template>
+      <condition name="job">
+        <li value="SOFTWARE DEVELOPER">
+          Software Developers typically earn $70k–$120k. Demand: <b>High</b>. They build apps and tools across industries and collaborate with design and QA teams. If you would like to hear about another area, you can ask me to tell you about another area!
+        </li>
+        <li value="CYBERSECURITY ANALYST">
+          Cybersecurity Analysts earn around $65k–$110k. Demand: <b>High</b>. They protect systems, respond to security incidents, and stay ahead of evolving threats. If you would like to hear about another area, you can ask me to tell you about another area!
+        </li>
+        <li value="DATA SCIENTIST">
+          Data Scientists earn $80k–$130k. Demand: <b>High</b>. They uncover patterns in data, build predictive models, and support data-driven decisions. If you would like to hear about another area, you can ask me to tell you about another area!
+        </li>
+        <li value="SYSTEMS ANALYST">
+          Systems Analysts make around $60k–$100k. Demand: <b>Medium</b>. They study system requirements, suggest improvements, and often work with both tech teams and stakeholders. If you would like to hear about another area, you can ask me to tell you about another area!
+        </li>
+        <li value="DEVOPS ENGINEER">
+          DevOps Engineers earn $85k–$140k. Demand: <b>High</b>. They focus on automation, monitoring, and ensuring fast, reliable software delivery. If you would like to hear about another area, you can ask me to tell you about another area! 
+        </li>
+      </condition>
+    </template>
+  </category>
+  
+  <!-- Ask About Another Career Area -->
+
+<category>
+  <pattern>TELL ME ABOUT CODING</pattern>
+  <template>
+    Sure! If you enjoy coding, you might like being a <b>Software Developer</b>. They write software using languages like Python, Java, or C++. Salary is around $70k–$120k. Demand: <b>High</b>.
+  </template>
+</category>
+
+<category>
+  <pattern>TELL ME ABOUT SECURITY</pattern>
+  <template>
+    Of course! If you like solving security problems, you could be a <b>Cybersecurity Analyst</b>. They defend systems from cyber threats. Salary: $65k–$110k. Demand: <b>High</b>.
+  </template>
+</category>
+
+<category>
+  <pattern>TELL ME ABOUT DATA</pattern>
+  <template>
+    Absolutely! <b>Data Scientists</b> work with large datasets to make predictions and insights. Salary: $80k–$130k. Demand: <b>High</b>.
+  </template>
+</category>
+
+<category>
+  <pattern>TELL ME ABOUT TROUBLESHOOTING SYSTEMS</pattern>
+  <template>
+    <b>Systems Analysts</b> work to improve how computer systems run. They often coordinate between teams. Salary: $60k–$100k. Demand: <b>Medium</b>.
+  </template>
+</category>
+
+<category>
+  <pattern>TELL ME ABOUT AUTOMATION</pattern>
+  <template>
+    <b>DevOps Engineers</b> specialize in automating infrastructure and deployments. Salary: $85k–$140k. Demand: <b>High</b>. It's a great fit if you like scripting and operations.
+  </template>
+</category>
+
+  
+  
+
+<category>
+  <pattern>THANK YOU</pattern>
+  <template>
+    You're welcome! Best of luck with your career in computer science!
+  </template>
+</category>
+ 
+
+  <!-- UNRECOGNIZED INPUT -->
   <category>
     <pattern>*</pattern>
-    <template>I have no answer for that.</template>
+    <template>
+      I'm not sure I understand. Try telling me what area you're interested in, like "I like coding" or "I like data".
+    </template>
   </category>
+
 </aiml>
